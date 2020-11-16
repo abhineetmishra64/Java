@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 public class array{
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
@@ -32,12 +33,8 @@ public class array{
 
     public void see(int n,int a[],int b[]){
         System.out.println("Array in asscending order");
-        for(int i=0;i<n;i++){
-            System.out.println(a[i]);
-        }
+        System.out.println(Arrays.toString(a));
         System.out.println("Array in descending order");
-        for(int i=0;i<n;i++){
-            System.out.println(b[i]);
-        }
+        System.out.println(Arrays.toString(b));
     }
 }
