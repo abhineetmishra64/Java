@@ -2,14 +2,13 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 class reverse{
-    public int[] rev(int[] a, int n){
-        int[] b = new int[a.length];
-        int j = n; 
-        for (int i = 0; i < n; i++) { 
-            b[j - 1] = a[i]; 
-            j = j - 1; 
-        }
-        return b;
+    public void rev(int[] a, int n){
+        int i,t; 
+        for (i = 0; i < n / 2; i++) { 
+            t = a[i]; 
+            a[i] = a[n - i - 1]; 
+            a[n - i - 1] = t; 
+        } 
     }
     public void see(int[] a){
         System.out.println(Arrays.toString(a));
@@ -29,9 +28,9 @@ public class rev_array {
         }
         System.out.println("Original array");
         r.see(a);
-        int[] re = r.rev(a, n);
+        r.rev(a, n);
         System.out.println("Reversed array");
-        r.see(re);
+        r.see(a);
         sc.close();
     }
 }
