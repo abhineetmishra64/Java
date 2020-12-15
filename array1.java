@@ -2,21 +2,20 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 class process{
-    public int[] delete(int n, int[] a, int x){
-        int[] a1 = new int[a.length-1];
+    public void delete(int n, int[] a, int x){
         for(int i=0;i<n;i++){
             if(x==a[i]){
                 int key = i;
                 for (int k = 0, j = 0; k<a.length; k++) {
                     if (k != key) {
-                        a1[j++] = a[k];
+                        a[j++] = a[k];
                     }
                 }
+                a[a.length - 1] = 0;
             }
         }
-        return a1;
     }
-    public void see(int n, int[] a){
+    public void see(int[] a){
         System.out.println(Arrays.toString(a));
     }
 }
@@ -33,12 +32,12 @@ public class array1 {
             a[i] = sc.nextInt();
         }
         System.out.println("Array before deleting an element");
-        pr.see(n,a);
+        pr.see(a);
         System.out.println("Enter the value that should be deleted");
         int x = sc.nextInt();
         sc.close();
-        int[] c = pr.delete(n,a,x);
+        pr.delete(n,a,x);
         System.out.println("Array after deleting an element");
-        pr.see(n,c);
+        pr.see(a);
     }
 }
