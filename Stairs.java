@@ -6,6 +6,7 @@ public class Stairs {
         int A = scn.nextInt();
         int totalWay = climbStair(A);
         System.out.println(totalWay);
+        scn.close();
     }
 
     public static int climbStair(int A){
